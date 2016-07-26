@@ -17,7 +17,7 @@ const routes = {
         {
             path: '/',
             getComponent(location, cb) {
-                System.import('./Home')
+                System.import('./home')
                     .then(loadRoute(cb))
                     .catch(errorLoading);
             }
@@ -25,7 +25,7 @@ const routes = {
         {
             path: '/about',
             getComponent(location, cb) {
-                 System.import('./About')
+                 System.import('./about')
                     .then(loadRoute(cb))
                     .catch(errorLoading);
             }
@@ -38,3 +38,4 @@ export default class Routes extends React.Component<{}, {}>{
         return <Router history={browserHistory} routes={routes} key={Math.random()} />
     }
 }
+

@@ -5,6 +5,8 @@
         "moduleResolution": "node",
         "baseUrl": "src",
         "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "noImplicitAny": false,
         "sourceMap": true,
         "outDir": "ts-build",

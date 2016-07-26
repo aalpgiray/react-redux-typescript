@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
+
 import Routes from "./pages/routes"
 
 // Import the Hot Module Reloading App Container – more on why we use 'require' below
