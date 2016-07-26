@@ -2,7 +2,7 @@
 
 This project uses react, react-router, typescript and webpack. Code spliting is enabled via System.import
 
-[What is next][df1]
+##### What is next
 
   - Redux
   - Sass loader
