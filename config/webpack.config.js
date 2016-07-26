@@ -17,17 +17,25 @@ module.exports = {
     path: path.resolve('dist')
   },
   resolve: {
-    extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
-    modulesDirectories: ['src', 'node_modules']
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.jsx'],
+    modules: [path.resolve('./src'), 'node_modules']
   },
   module: {
     loaders: [
       { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] }
+    ],
+    preLoaders: [
+      // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
+      { test: /\.(js|css)$/, loader: 'source-map-loader' }
     ]
   },
   plugins: [
     // Add the Webpack HMR plugin so it will notify the browser when the app code changes
     new webpack.HotModuleReplacementPlugin(),
-    new WebpackNotifierPlugin({ alwaysNotify: true })
+    new WebpackNotifierPlugin({ alwaysNotify: true }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: true
+    })
   ]
 }

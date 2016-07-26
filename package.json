@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack.config.js",
+    "build": "webpack --config config/webpack.config.js --display-error-details",
     "start": "node server.js"
   },
   "keywords": [],
@@ -22,8 +22,8 @@
     "source-map-loader": "^0.1.5",
     "ts-loader": "^0.8.2",
     "typescript": "^2.1.0-dev.20160725",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
+    "webpack": "^2.1.0-beta.20",
+    "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-notifier": "^1.3.0"
   },
   "dependencies": {
