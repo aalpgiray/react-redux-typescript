@@ -3,8 +3,12 @@ import { Link, Router, Route, browserHistory } from "react-router"
 
 import App from "../containers/App"
 
-function errorLoading(err) {
+function errorLoading(err: any) {
     console.error('Dynamic page loading failed', err);
+}
+
+function loadRoute(cb: any) {
+    return (module: any) => cb(null, module.default);
 }
 
 const routes = {
@@ -13,19 +17,17 @@ const routes = {
         {
             path: '/',
             getComponent(location, cb) {
-                require.ensure([], function (require) {
-                    var a = require<any>("./Home");
-                    cb(null, a.default);
-                });
+                System.import('./Home')
+                    .then(loadRoute(cb))
+                    .catch(errorLoading);
             }
         },
         {
             path: '/about',
             getComponent(location, cb) {
-                require.ensure([], function (require) {
-                    var a = require<any>("./About");
-                    cb(null, a.default);
-                });
+                 System.import('./About')
+                    .then(loadRoute(cb))
+                    .catch(errorLoading);
             }
         }
     ]

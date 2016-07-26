@@ -15,6 +15,7 @@
         "webpack": "registry:npm/webpack#1.12.9+20160418172948"
     },
     "globalDependencies": {
-        "react": "registry:dt/react#0.14.0+20160720060442"
+        "react": "registry:dt/react#0.14.0+20160720060442",
+        "systemjs": "registry:dt/systemjs#0.19.29+20160702105636"
     }
 }
