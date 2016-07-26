@@ -8,10 +8,7 @@ interface IHome {
 export default class Home extends React.Component<IHome, {}>{
     render() {
         return (
-            <TextField
-                hintText="Hint Text"
-                floatingLabelText="Floating Label Text"
-                />
+            <h1>Home Page</h1>
         )
     }
 }
