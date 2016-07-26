@@ -1,6 +1,6 @@
 # React With Typescript 
 
-This project uses react, react-router, typescript and webpack. Code spliting is enabled via System.import
+This project uses react, react-router, typescript and webpack. Code spliting is enabled via System.import.
 
 ##### What is next
 
