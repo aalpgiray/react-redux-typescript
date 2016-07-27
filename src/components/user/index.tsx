@@ -29,7 +29,9 @@ export class User extends React.Component<IUser, {}>{
     render() {
         return (
             <div style={{ display: "flex" }}>
-                <div style={{ color: "darkgray", marginRight: 10 }}>{this.props.user.get("name")} Test !!!</div>
+                <div style={{ color: "darkgray", marginRight: 10 }}>
+                    {this.props.user.get("name")}Test
+                </div>
                 <a style={{ cursor: "pointer", textDecoration: "underline", color: "lightgrey" }} onClick={() => { this.updateUserName() } }>Çıkış</a>
             </div>
         )
