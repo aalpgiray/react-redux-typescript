@@ -4,13 +4,15 @@
         "babel-template": "registry:dt/babel-template#6.7.0+20160423062108",
         "babel-traverse": "registry:dt/babel-traverse#6.7.0+20160423062108",
         "babel-types": "registry:dt/babel-types#6.7.0+20160423062108",
-        "babylon": "registry:dt/babylon#6.7.0+20160423062108"
+        "babylon": "registry:dt/babylon#6.7.0+20160423062108",
+        "redux-devtools": "registry:dt/redux-devtools#3.0.0+20160703120921"
     },
     "dependencies": {
         "react": "registry:npm/react#15.0.1+20160601175240",
         "react-dom": "registry:npm/react-dom#15.0.1+20160705210405",
         "react-redux": "registry:npm/react-redux#4.4.0+20160614222153",
-        "react-router": "registry:npm/react-router#2.4.0+20160723033700"
+        "react-router": "registry:npm/react-router#2.4.0+20160723033700",
+        "react-router-redux": "registry:npm/react-router-redux#4.0.0+20160602212457"
     },
     "devDependencies": {
         "webpack": "registry:npm/webpack#1.12.9+20160418172948"

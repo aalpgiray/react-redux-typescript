@@ -1,41 +1,40 @@
 import * as React from "react"
 import { Link, Router, Route, browserHistory } from "react-router"
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { Provider } from "react-redux"
+
 
 import App from "../containers/App"
+import { route as homeRoute } from "./home/route"
+import { route as aboutRoute } from "./about/route"
+import store from ".././store"
 
-function errorLoading(err: any) {
+
+export function errorLoading(err: any) {
     console.error('Dynamic page loading failed', err);
 }
 
-function loadRoute(cb: any) {
+export function loadRoute(cb: any) {
     return (module: any) => cb(null, module.default);
 }
 
 const routes = {
     component: App,
     childRoutes: [
-        {
-            path: '/',
-            getComponent(location, cb) {
-                System.import('./home')
-                    .then(loadRoute(cb))
-                    .catch(errorLoading);
-            }
-        },
-        {
-            path: '/about',
-            getComponent(location, cb) {
-                 System.import('./about')
-                    .then(loadRoute(cb))
-                    .catch(errorLoading);
-            }
-        }
+        homeRoute,
+        aboutRoute
     ]
 }
 
+const history = syncHistoryWithStore(browserHistory, store)
+
 export default class Routes extends React.Component<{}, {}>{
     render() {
-        return <Router history={browserHistory} routes={routes} key={Math.random()} />
+        return (
+            <Provider store={store}>
+                <Router history={history} routes={routes}  key={Math.random()} />
+            </Provider>
+        )
     }
 }
 

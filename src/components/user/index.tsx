@@ -3,7 +3,7 @@ import { Dispatch } from "redux"
 import { connect } from "react-redux"
 import { Map } from "immutable"
 
-import { getUser } from "../.././actions/user-actions"
+import { getUser, setUserName } from "../.././actions/user-actions"
 
 interface IUser {
     user?: Map<string, string>,
@@ -23,11 +23,14 @@ export class User extends React.Component<IUser, {}>{
     async componentWillMount() {
         this.props.dispatch(await getUser())
     }
+    updateUserName() {
+        this.props.dispatch(setUserName())
+    }
     render() {
         return (
             <div style={{ display: "flex" }}>
-                <div style={{ color: "darkgray", marginRight: 10 }}>{this.props.user.get("name")}</div>
-                <a style={{ cursor: "pointer", textDecoration: "underline", color: "lightgrey" }} onClick={() => { } }>Çıkış</a>
+                <div style={{ color: "darkgray", marginRight: 10 }}>{this.props.user.get("name")} Test</div>
+                <a style={{ cursor: "pointer", textDecoration: "underline", color: "lightgrey" }} onClick={() => { this.updateUserName() } }>Çıkış</a>
             </div>
         )
     }

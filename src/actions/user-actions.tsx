@@ -12,3 +12,10 @@ export async function getUser(): Promise<any> {
         })
     })
 }
+
+export function setUserName() {
+    return {
+        type: UserActions.setUserName,
+        payload: Math.random().toString()
+    }
+}

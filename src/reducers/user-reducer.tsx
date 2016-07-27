@@ -12,6 +12,9 @@ export default function reducer(state = UserDefaults, action) {
         case UserActions.getUsers: {
             return state.set("name", action.payload);
         }
+        case UserActions.setUserName: {
+            return state.set("name", action.payload);
+        }
     }
     return state;
 
