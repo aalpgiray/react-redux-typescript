@@ -6,10 +6,10 @@ module.exports = {
   devtool: '#inline-source-map',
   entry: [
     // Add the react hot loader entry point - in reality, you only want this in your dev Webpack config
-    'babel-polyfill',
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
+    'babel-polyfill',
     'index.tsx'
   ],
   output: {

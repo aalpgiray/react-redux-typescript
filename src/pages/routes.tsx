@@ -10,6 +10,7 @@ import { route as aboutRoute } from "./about/route"
 import store from ".././store"
 
 
+
 export function errorLoading(err: any) {
     console.error('Dynamic page loading failed', err);
 }
