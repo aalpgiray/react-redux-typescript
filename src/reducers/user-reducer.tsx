@@ -1,19 +1,31 @@
 import { Map } from "immutable"
 import { Action, Reducer } from "redux"
 
-import { UserActions } from ".././actions/user-actions"
+import {
+    GET_USERS,
+    GET_USERS_PENDING,
+    GET_USERS_FULFILLED,
+    GET_USERS_REJECTED,
+    SET_USER_NAME
+} from ".././actions/user-actions"
 
 const UserDefaults = Map({
     name: "",
+    fetching: false
 })
 
 export default function reducer(state = UserDefaults, action) {
     switch (action.type) {
-        case UserActions.getUsers: {
+        case GET_USERS_PENDING: {
+            return state.set("fetching", true);
+        }
+        case SET_USER_NAME: {
             return state.set("name", action.payload);
         }
-        case UserActions.setUserName: {
-            return state.set("name", action.payload);
+        case GET_USERS_FULFILLED: {
+            return state
+                .set("name", action.payload[0].name)
+                .set("fetching", false);
         }
     }
     return state;

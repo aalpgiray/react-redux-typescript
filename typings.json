@@ -5,22 +5,29 @@
         "babel-traverse": "registry:dt/babel-traverse#6.7.0+20160423062108",
         "babel-types": "registry:dt/babel-types#6.7.0+20160423062108",
         "babylon": "registry:dt/babylon#6.7.0+20160423062108",
-        "redux-devtools": "registry:dt/redux-devtools#3.0.0+20160703120921"
+        "redux-devtools": "registry:dt/redux-devtools#3.0.0+20160703120921",
+        "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160514173414"
     },
     "dependencies": {
-        "react": "registry:npm/react#15.0.1+20160601175240",
         "react-dom": "registry:npm/react-dom#15.0.1+20160705210405",
         "react-redux": "registry:npm/react-redux#4.4.0+20160614222153",
         "react-router": "registry:npm/react-router#2.4.0+20160723033700",
-        "react-router-redux": "registry:npm/react-router-redux#4.0.0+20160602212457"
+        "react-router-redux": "registry:npm/react-router-redux#4.0.0+20160602212457",
+        "redux-thunk": "registry:npm/redux-thunk#2.0.0+20160525185520"
     },
     "devDependencies": {
         "webpack": "registry:npm/webpack#1.12.9+20160418172948"
     },
     "globalDependencies": {
+        "axios": "registry:dt/axios#0.9.1+20160629101425",
+        "expect": "registry:dt/expect#1.13.4+20160316155526",
         "material-ui": "registry:dt/material-ui#0.15.1+20160720000941",
+        "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+        "nock": "registry:dt/nock#0.54.0+20160613160405",
         "react": "registry:dt/react#0.14.0+20160720060442",
         "react-tap-event-plugin": "registry:dt/react-tap-event-plugin#0.0.0+20160602142434",
+        "redux": "registry:dt/redux#3.5.2+20160703092728",
+        "redux-promise-middleware": "registry:dt/redux-promise-middleware#0.0.0+20160108032528",
         "systemjs": "registry:dt/systemjs#0.19.29+20160702105636"
     }
 }

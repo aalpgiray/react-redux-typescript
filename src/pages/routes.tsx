@@ -3,13 +3,10 @@ import { Link, Router, Route, browserHistory } from "react-router"
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { Provider } from "react-redux"
 
-
-import App from "../containers/App"
+import App from ".././App"
 import { route as homeRoute } from "./home/route"
 import { route as aboutRoute } from "./about/route"
 import store from ".././store"
-
-
 
 export function errorLoading(err: any) {
     console.error('Dynamic page loading failed', err);

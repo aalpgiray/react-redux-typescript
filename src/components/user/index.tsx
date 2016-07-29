@@ -24,13 +24,21 @@ export class User extends React.Component<IUser, {}>{
         this.props.dispatch(await getUser())
     }
     updateUserName() {
-        this.props.dispatch(setUserName())
+        this.props.dispatch(setUserName("Alp !!!"))
     }
     render() {
+
+        let userName;
+        if (this.props.user.get("fetching")) {
+            userName = "..."
+        } else {
+            userName = this.props.user.get("name")
+        }
+
         return (
             <div style={{ display: "flex" }}>
                 <div style={{ color: "darkgray", marginRight: 10 }}>
-                    {this.props.user.get("name")}Test
+                    {userName}
                 </div>
                 <a style={{ cursor: "pointer", textDecoration: "underline", color: "lightgrey" }} onClick={() => { this.updateUserName() } }>Çıkış</a>
             </div>

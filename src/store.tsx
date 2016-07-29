@@ -1,4 +1,6 @@
-import { applyMiddleware, createStore, ReducersMapObject } from "redux"
+import { applyMiddleware, createStore, ReducersMapObject, compose } from "redux"
+import promise from "redux-promise-middleware"
+import thunk from "redux-thunk"
 import { Map } from "immutable"
 
 
@@ -14,5 +16,7 @@ interface IWindow extends Window {
 
 declare var window: IWindow;
 
+const middleware = applyMiddleware(promise(), thunk);
 
-export default createStore(reducers, window.devToolsExtension && window.devToolsExtension());
+
+export default createStore(reducers, compose(middleware, window.devToolsExtension && window.devToolsExtension()));
