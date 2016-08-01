@@ -3,7 +3,7 @@ import { Link, Router, Route, browserHistory } from "react-router"
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { Provider } from "react-redux"
 
-import App from ".././App"
+import App from ".././app"
 import { route as homeRoute } from "./home/route"
 import { route as aboutRoute } from "./about/route"
 import store from ".././store"

@@ -13,20 +13,20 @@ import { setUserName, getUser, GET_USERS, SET_USER_NAME, GET_USERS_PENDING, GET_
 const middlewares = [promise(), thunk]
 const mockStore = configureMockStore(middlewares)
 
-export const changeName = describe('user.actions', function () {
+export const changeName = describe('user actions', function () {
 
   afterEach(() => {
     nock.cleanAll()
   })
 
-  it('should change user name', () => {
+  it('should change name', () => {
     expect(setUserName("Alp !!!")).toEqual({
       type: SET_USER_NAME,
       payload: "Alp !!!"
     })
   })
 
-  it('should get user', () => {
+  it('should get User', () => {
     nock('http://rest.learncode.academy')
       .get('/api/alpgiray/getusers')
       .reply(200, {
