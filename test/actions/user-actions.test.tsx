@@ -8,13 +8,18 @@ import axios from 'axios'
 import reducers from '../../src/reducers/';
 
 
-import { setUserName, getUser, GET_USERS, SET_USER_NAME, GET_USERS_PENDING, GET_USERS_FULFILLED, GET_USERS_REJECTED } from '../.././src/actions/user-actions'
+import {
+  setUserName,
+  getUser,
+  SET_USER_NAME,
+  GET_USERS_FULFILLED,
+  GET_USERS_PENDING
+} from '../.././src/actions/user-actions'
 
 const middlewares = [promise(), thunk]
 const mockStore = configureMockStore(middlewares)
 
 export const changeName = describe('user actions', function () {
-
   afterEach(() => {
     nock.cleanAll()
   })

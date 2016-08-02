@@ -2,10 +2,8 @@ import { Map } from "immutable"
 import { Action, Reducer } from "redux"
 
 import {
-    GET_USERS,
     GET_USERS_PENDING,
     GET_USERS_FULFILLED,
-    GET_USERS_REJECTED,
     SET_USER_NAME
 } from ".././actions/user-actions"
 
@@ -27,7 +25,7 @@ export default function reducer(state = UserDefaults, action) {
                 .set("name", action.payload[0].name)
                 .set("fetching", false);
         }
+        default:
+            return state;
     }
-    return state;
-
 }

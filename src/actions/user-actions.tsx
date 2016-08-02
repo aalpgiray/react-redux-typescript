@@ -7,16 +7,12 @@ export const
     GET_USERS_REJECTED = "GET_USERS_REJECTED",
     GET_USERS_FULFILLED = "GET_USERS_FULFILLED";
 
-export function getUser() {
-    return {
-        type: GET_USERS,
-        payload: axios.get('http://rest.learncode.academy/api/alpgiray/getusers').then(res => res.data)
-    }
-}
+export const getUser = () => ({
+    type: GET_USERS,
+    payload: axios.get('http://rest.learncode.academy/api/alpgiray/getusers').then(res => res.data)
+})
 
-export function setUserName(name: String) {
-    return {
-        type: SET_USER_NAME,
-        payload: name
-    }
-}
+export const setUserName = (name: String) => ({
+    type: SET_USER_NAME,
+    payload: name
+})
