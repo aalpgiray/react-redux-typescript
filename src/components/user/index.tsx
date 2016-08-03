@@ -5,6 +5,7 @@ import { Map } from "immutable"
 
 import { getUser, setUserName } from "../.././actions/user-actions"
 
+
 interface IUser {
     user?: Map<string, string>,
     dispatch?: Dispatch<any>
@@ -14,14 +15,15 @@ interface IUser {
     let props: IUser = {
         user: store.user
     }
+
     return props
 })
 export class User extends React.Component<IUser, {}>{
     shouldComponentUpdate(nextProps: IUser, nextState) {
         return this.props.user != nextProps.user
     }
-    async componentWillMount() {
-        this.props.dispatch(await getUser())
+    componentWillMount() {
+        this.props.dispatch(getUser())
     }
     updateUserName() {
         this.props.dispatch(setUserName("Alp !!!"))
