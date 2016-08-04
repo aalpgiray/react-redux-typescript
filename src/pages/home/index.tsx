@@ -1,9 +1,7 @@
 import * as React from "react"
 import { Link } from "react-router"
 
-import "./style"
-
-interface IHome {
+interface IHome { // yusuf sen neden bahsediyorsun ... 
     params?: any
 }
 
@@ -13,7 +11,7 @@ export default class Home extends React.Component<IHome, {}>{
     }
     render() {
         return (
-            <h1>Home Page !!!</h1>
+            <h1>Home Page</h1>
         )
     }
 }

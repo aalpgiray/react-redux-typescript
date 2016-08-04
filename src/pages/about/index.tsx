@@ -9,6 +9,8 @@ export default class About extends React.Component<IAbout, {}>{
         return false;
     }
     render() {
-        return <h1>About Page !!!</h1>
+        return (
+            <h1>About Page !!!</h1>
+        )
     }
 }

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm test &&  webpack --config config/webpack.config.js --display-error-details",
+    "build": "npm test &&  webpack --config config/webpack.build.config.js --display-error-details",
     "start": "node server.js",
-    "test": "mocha-webpack --watch --webpack-config config/webpack.tests.config.js \"test/**/index.tsx\""
+    "test": "mocha-webpack --webpack-config config/webpack.tests.config.js \"test/**/index.tsx\"",
+    "test:w": "mocha-webpack --watch --webpack-config config/webpack.tests.config.js \"test/**/index.tsx\""
   },
   "keywords": [],
   "author": "",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "axios": "^0.13.1",
+    "history": "^3.0.0",
     "immutable": "^3.8.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.14.1",

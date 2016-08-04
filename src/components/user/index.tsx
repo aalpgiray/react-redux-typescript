@@ -1,10 +1,11 @@
-import * as React from "react"
+import React, { Component } from "react"
 import { Dispatch } from "redux"
 import { connect } from "react-redux"
 import { Map } from "immutable"
 
 import { getUser, setUserName } from "../.././actions/user-actions"
 
+import * as UserValues from "../.././reducers/user-reducer"
 
 interface IUser {
     user?: Map<string, string>,
@@ -18,12 +19,15 @@ interface IUser {
 
     return props
 })
-export class User extends React.Component<IUser, {}>{
+export class User extends Component<IUser, {}>{
     shouldComponentUpdate(nextProps: IUser, nextState) {
         return this.props.user != nextProps.user
     }
-    componentWillMount() {
+    componentDidMount() {
         this.props.dispatch(getUser())
+    }
+    componentWillUnmount() {
+        alert('I knew Dan lied about hot reloading.');
     }
     updateUserName() {
         this.props.dispatch(setUserName("Alp !!!"))
@@ -31,10 +35,10 @@ export class User extends React.Component<IUser, {}>{
     render() {
 
         let userName;
-        if (this.props.user.get("fetching")) {
+        if (this.props.user.get(UserValues.fetching)) {
             userName = "..."
         } else {
-            userName = this.props.user.get("name")
+            userName = this.props.user.get(UserValues.name)
         }
 
         return (

@@ -7,6 +7,10 @@ import {
     SET_USER_NAME
 } from ".././actions/user-actions"
 
+export const
+    fetching = "fetching",
+    name = "name";
+
 const UserDefaults = Map({
     name: "",
     fetching: false
@@ -15,10 +19,10 @@ const UserDefaults = Map({
 export default function reducer(state = UserDefaults, action) {
     switch (action.type) {
         case GET_USERS_PENDING: {
-            return state.set("fetching", true);
+            return state.set(fetching, true);
         }
         case SET_USER_NAME: {
-            return state.set("name", action.payload);
+            return state.set(name, action.payload);
         }
         case GET_USERS_FULFILLED: {
             return state

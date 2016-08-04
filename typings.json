@@ -9,6 +9,7 @@
         "redux-mock-store": "registry:dt/redux-mock-store#0.0.6+20160514173414"
     },
     "dependencies": {
+        "history": "registry:npm/history#2.0.0+20160607172317",
         "lodash": "registry:npm/lodash#4.0.0+20160723033700",
         "react-dom": "registry:npm/react-dom#15.0.1+20160705210405",
         "react-redux": "registry:npm/react-redux#4.4.0+20160614222153",

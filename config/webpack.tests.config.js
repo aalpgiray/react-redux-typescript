@@ -18,6 +18,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
+      { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] },
       { test: /\.json$/,loaders: ['json-loader']}
     ]
   },

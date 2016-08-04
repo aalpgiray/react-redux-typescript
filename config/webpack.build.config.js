@@ -4,15 +4,12 @@ var WebpackNotifierPlugin = require('webpack-notifier')
 var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
 
 module.exports = {
-  devtool: '#inline-source-map',
   entry: {app: [
       // Add the react hot loader entry point - in reality, you only want this in your dev Webpack config
-      'react-hot-loader/patch',
-      'webpack-dev-server/client?http://localhost:3000',
-      'webpack/hot/only-dev-server',
       'index.tsx'
     ],
     vendor: [
+      'react-hot-loader/patch',
       'babel-polyfill', // might be not nessasary !!!
       'immutable',
       'material-ui',
@@ -28,7 +25,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    publicPath: '/dist',
+    publicPath: 'dist/',
     path: path.resolve('dist')
   },
   resolve: {
@@ -37,7 +34,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.tsx?$/, loaders: ['react-hot-loader/webpack', 'babel', 'ts-loader'] },
+      { test: /\.tsx?$/, loaders: ['babel', 'ts-loader'] },
       { test: /\.scss$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
     ],
     preLoaders: [
@@ -53,7 +50,7 @@ module.exports = {
     new WebpackNotifierPlugin({ alwaysNotify: true }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: true
+      debug: false
     })
   ]
 }
