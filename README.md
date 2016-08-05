@@ -2,10 +2,8 @@
 
 This project uses redux, react, react-router, typescript and webpack. Code spliting is enabled via System.import.
 
-##### What is next
-
-  - Sass loader
-  - Unit tests
+## Its not hot reloading without unmounting components, so i put this one togetter
+https://github.com/aalpgiray/react-hot-boilerplate-ts
 
 ### Installation
 ```sh
